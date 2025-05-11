@@ -1,16 +1,18 @@
 import React from 'react'
+import star from '../assets/star.svg'
+import no_movie from '../assets/no-movie.png'
 
 const MovieCard = ({ movie: { title, vote_average, poster_path, release_date, original_language, id } }) => {
     return (
         <div className='movie-card cursor-pointer'>
-            <img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : '/no-movie.png'} alt={title} />
+            <img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : `${no_movie}`} alt={title} />
             <div className='mt-4'>
                 <h3 className='text-xl'>{title}</h3>
             </div>
 
             <div className='content'>
                 <div className='rating'>
-                    <img src="/star.svg" alt="star" />
+                    <img src={star} alt="star" />
                     <p>{vote_average ? vote_average.toFixed(1) : 'N/A'}</p>
 
                     <span>•</span>
